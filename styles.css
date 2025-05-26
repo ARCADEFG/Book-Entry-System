@@ -1,0 +1,215 @@
+:root {
+  --bg: #f0f4f8;
+  --text: #2d3436;
+  --card-bg: rgba(255, 255, 255, 0.8);
+  --card-shadow: rgba(0, 0, 0, 0.1);
+  --primary: #0984e3;
+  --accent: #00cec9;
+  --remove: #d63031;
+  --remove-dark: #ff7675;
+  --summary-bg: rgba(255, 255, 255, 0.6);
+}
+
+body.dark {
+  --bg: #1e1e2f;
+  --text: #ecf0f1;
+  --card-bg: rgba(40, 40, 60, 0.9);
+  --card-shadow: rgba(255, 255, 255, 0.05);
+  --primary: #74b9ff;
+  --accent: #55efc4;
+  --remove: #ff6b6b;
+  --remove-dark: #d63031;
+  --summary-bg: rgba(255, 255, 255, 0.1);
+}
+
+* {
+  box-sizing: border-box;
+  transition: all 0.25s ease;
+}
+
+body {
+  font-family: 'Inter', sans-serif;
+  margin: 0;
+  background: var(--bg);
+  color: var(--text);
+  padding: 40px 20px;
+}
+
+h2 {
+  text-align: center;
+  margin-bottom: 25px;
+  font-size: 28px;
+  font-weight: 600;
+}
+
+.container {
+  max-width: 1000px;
+  margin: auto;
+  background: var(--card-bg);
+  border-radius: 20px;
+  padding: 30px;
+  box-shadow: 0 10px 40px var(--card-shadow);
+  backdrop-filter: blur(12px);
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  background-color: transparent;
+  margin-bottom: 20px;
+}
+
+th, td {
+  padding: 16px;
+  text-align: center;
+  font-size: 15px;
+}
+
+th {
+  background-color: var(--primary);
+  color: #fff;
+  font-weight: 600;
+}
+
+td {
+  background-color: rgba(255, 255, 255, 0.5);
+  border-bottom: 1px solid #ccc;
+}
+
+body.dark td {
+  background-color: rgba(40, 40, 60, 0.6);
+  border-bottom: 1px solid #444;
+}
+
+td input {
+  width: 100%;
+  padding: 10px 12px;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+  font-size: 14px;
+  background-color: #f9f9f9;
+}
+
+body.dark td input {
+  background-color: #444;
+  color: #fff;
+  border: 1px solid #666;
+}
+
+.btn {
+  padding: 8px 14px;
+  border: none;
+  border-radius: 30px;
+  font-weight: 600;
+  cursor: pointer;
+  margin: 2px;
+  font-size: 14px;
+}
+
+.addBtn {
+  background: var(--accent);
+  color: #fff;
+}
+
+.removeBtn {
+  background: var(--remove);
+  color: #fff;
+}
+
+.removeBtn:hover {
+  background: var(--remove-dark);
+}
+
+.summaryBtn {
+  display: block;
+  margin: 10px auto 30px;
+  padding: 12px 30px;
+  background: #fff;
+  color: #2d3436;
+  border: 2px solid #ccc;
+  font-weight: 600;
+  font-size: 15px;
+  border-radius: 40px;
+  cursor: pointer;
+  transition: 0.3s ease;
+}
+
+.summaryBtn:hover {
+  background: #f1f1f1;
+}
+
+#summary {
+  background: var(--summary-bg);
+  padding: 20px;
+  border-radius: 16px;
+  box-shadow: 0 4px 20px var(--card-shadow);
+}
+
+#summary table {
+  width: 100%;
+}
+
+#summary th {
+  background-color: #00b894;
+  color: white;
+  font-size: 14px;
+}
+
+#summary td {
+  background-color: rgba(255, 255, 255, 0.8);
+}
+
+body.dark #summary td {
+  background-color: rgba(60, 60, 80, 0.8);
+}
+
+/* Summary table special alignment for subtotal, tax, total */
+#summary tr td[colspan="3"] {
+  text-align: right;
+  padding-right: 24px;
+  font-weight: 700;
+}
+
+#summary tr td:last-child {
+  text-align: right;
+  font-weight: 700;
+  padding-left: 10px;
+}
+
+.toggle-theme {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  padding: 10px 18px;
+  border-radius: 30px;
+  border: none;
+  background: var(--text);
+  color: var(--bg);
+  font-weight: 600;
+  cursor: pointer;
+  box-shadow: 0 2px 10px var(--card-shadow);
+}
+
+.toggle-theme:hover {
+  opacity: 0.9;
+}
+
+@media (max-width: 768px) {
+  th, td {
+    font-size: 13px;
+    padding: 10px;
+  }
+
+  td input {
+    font-size: 12px;
+  }
+
+  .btn {
+    width: 100%;
+    margin: 6px 0;
+  }
+
+  .summaryBtn {
+    width: 100%;
+  }
+}
